@@ -134,8 +134,8 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                //intent.setClass(MainActivity.this, HomeActivity.class);
-                //startActivity(intent);
+                intent.setClass(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
             }
         });
         final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -398,16 +398,16 @@ public class MainActivity extends AppCompatActivity
                     task = new TimerTask() {
                         @Override
                         public void run() {
-                            //Intent InPersonal = new Intent(MainActivity.this, HomeActivity.class);
-                            //startActivity(InPersonal);
+                            Intent InPersonal = new Intent(MainActivity.this, HomeActivity.class);
+                            startActivity(InPersonal);
                         }
                     };
                 } else {
                     task = new TimerTask() {
                         @Override
                         public void run() {
-                            //Intent InPersonal = new Intent(MainActivity.this, HomeActivity.class);
-                            //startActivity(InPersonal);
+                            Intent InPersonal = new Intent(MainActivity.this, HomeActivity.class);
+                            startActivity(InPersonal);
                         }
                     };
                 }

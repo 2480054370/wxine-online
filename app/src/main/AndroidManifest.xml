@@ -68,6 +68,10 @@
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
+            android:name="com.wxine.android.HomeActivity"
+            android:label="@string/title_personaldata"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name="com.wxine.android.PublishActivity"
             android:theme="@style/MyDialog"></activity>
     </application>
