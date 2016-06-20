@@ -381,8 +381,8 @@ public class MainActivity extends AppCompatActivity
                 task = new TimerTask() {
                     @Override
                     public void run() {
-                        //Intent InEvent = new Intent(MainActivity.this, EventActivity.class);
-                        //startActivity(InEvent);
+                        Intent InEvent = new Intent(MainActivity.this, EventActivity.class);
+                        startActivity(InEvent);
                     }
                 };
                 timer.schedule(task, 300 * 1);
