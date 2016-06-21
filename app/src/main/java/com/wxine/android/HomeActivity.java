@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -62,13 +61,18 @@ public class HomeActivity extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new HomeAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view) {
-                Log.e("--------", "skajdksa");
+                //Log.e("--------", "skajdksa");
+                //Intent Hintent = new Intent(getApplication(), HomeDetails.class);
+                //ImageView iview = (ImageView) view.findViewById(R.id.HomeBodyAgreeImg);
+                //String tag = iview.getTag().toString();
+                //Toast.makeText(getApplication(), "aaa" + iview.getTag(), Toast.LENGTH_SHORT).show();
+                //startActivity(Hintent);
             }
 
             @Override
             public void onKQClick(View view, int position) {
-                //Intent intent = new Intent(HomeActivity.this, PersonalDataActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(HomeActivity.this, PersonalActivity.class);
+                startActivity(intent);
             }
         });
         recyclerView.setHasFixedSize(true);

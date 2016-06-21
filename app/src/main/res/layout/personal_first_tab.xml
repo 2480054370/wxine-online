@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:gravity="center_vertical"
+                android:paddingBottom="5dp"
+                android:paddingLeft="4.0dip"
+                android:text="基本信息"
+                android:textColor="#ff888888"
+                android:textSize="15.0sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="12.0dip">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/PersonalAlias"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="别名(注册后不能再次更改)："
+                        android:inputType="textLongMessage"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/PersonalAutograph"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="个人签名："
+                        android:inputType="textLongMessage"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/PersonalPlace"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="籍贯(与户口本一致)："
+                        android:inputType="textLongMessage"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/PersonalReligion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="宗教："
+                        android:inputType="textLongMessage"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/PersonalHobby"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="爱好："
+                        android:inputType="textLongMessage"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/PersonalHomepage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="个人主页："
+                        android:inputType="textLongMessage"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="17.0dip"
+                    android:text="血型"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:entries="@array/type" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="17.0dip"
+                    android:text="学历"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:entries="@array/education" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingLeft="12.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自我介绍："
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/add_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:drawable/edit_text"
+                    android:enabled="true"
+                    android:gravity="top"
+                    android:hint="用一句话介绍自己吧！"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:minLines="3"
+                    android:scrollbars="vertical"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/FirstUpdata"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="确认更新"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

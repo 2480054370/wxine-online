@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.wxine.android.HomeDetails">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/main_padding">
+
+                <ImageView
+                    android:id="@+id/HomeDetailsUser"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/course_tou" />
+
+                <TextView
+                    android:id="@+id/HomeDetailsName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/HomeDetailsUser"
+                    android:paddingTop="4dp"
+                    android:text="@string/username"
+                    android:textColor="@color/name"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/HomeDetailsContent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.0"
+                android:paddingBottom="@dimen/main_padding"
+                android:paddingLeft="@dimen/main_padding"
+                android:paddingRight="@dimen/main_padding"
+                android:paddingTop="@dimen/padding_zero"
+                android:text="@string/cart_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fontsize" />
+
+            <ImageView
+                android:id="@+id/HomeDetailsImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/info_pic1" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_eight">
+
+                <ImageView
+                    android:id="@+id/HomeDetailsAgreeImg"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/course_xfavorite" />
+
+                <ImageView
+                    android:id="@+id/HomeDetailsShareImg"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/course_xreply" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/HomeDetailsComment"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_margin="5dp"
+                            android:layout_toLeftOf="@+id/HomeDetailsNum"
+                            android:src="@drawable/course_xcomment" />
+
+                        <TextView
+                            android:id="@+id/HomeDetailsNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingBottom="7dp"
+                            android:paddingLeft="@dimen/padding_zero"
+                            android:paddingRight="@dimen/padding_eight"
+                            android:paddingTop="7dp"
+                            android:text="@string/comment_num"
+                            android:textSize="@dimen/fontsize" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/HomeDetailsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/HomeDetailsVoiceText"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/axml_btn_to_voice_selector" />
+
+        <EditText
+            android:id="@+id/HomeDetailsEditText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/HomeDetailsButtonSend"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/axml_btn_chat_send_selector"
+            android:text="发送"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>

@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/PersonalUser"
+                android:layout_toRightOf="@+id/HomeBodyUser"
                 android:paddingTop="4dp"
                 android:text="@string/username"
                 android:textColor="@color/name"
@@ -61,14 +61,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/topbackground" />
+                android:src="@drawable/info_pic1" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_eight">
 
             <ImageView
                 android:id="@+id/HomeBodyAgreeImg"
