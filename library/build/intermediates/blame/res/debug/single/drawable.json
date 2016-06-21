@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\build\\intermediates\\res\\merged\\debug\\drawable\\mdtp_done_background_color_dark.xml",
+        "source": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\src\\main\\res\\drawable\\mdtp_done_background_color_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\build\\intermediates\\res\\merged\\debug\\drawable\\mdtp_material_button_selected.xml",
+        "source": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\src\\main\\res\\drawable\\mdtp_material_button_selected.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\build\\intermediates\\res\\merged\\debug\\drawable\\mdtp_material_button_background.xml",
+        "source": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\src\\main\\res\\drawable\\mdtp_material_button_background.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\build\\intermediates\\res\\merged\\debug\\drawable\\mdtp_done_background_color.xml",
+        "source": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\src\\main\\res\\drawable\\mdtp_done_background_color.xml"
+    }
+]
