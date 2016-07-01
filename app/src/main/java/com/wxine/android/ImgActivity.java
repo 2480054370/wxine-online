@@ -18,10 +18,11 @@ import java.util.HashMap;
 public class ImgActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     //item 显示所需
-    private String[] title = {"2013-10-24 星期四", "2013-10-4 星期san", "2013-10-4 星期二", "2013-10-14 星期一", "2013-10-24 星期四", "2013-10-4 星期san", "2013-10-4 星期二", "2013-10-14 星期一"};
+    private String[] title = {"2013-10-24 星期四", "2013-10-4 星期san", "2013-10-4 星期二", "2013-10-4 星期二", "2013-10-4 星期二", "2013-10-4 星期二", "2013-10-4 星期二"};
     private ArrayList<String> mTitle = new ArrayList<>();
     ImgAdapter mRecyclerViewAdapter;
     private ArrayList<ArrayList<HashMap<String, Object>>> mArrayList;
+    private ArrayList<ArrayList<String>>mImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +43,12 @@ public class ImgActivity extends AppCompatActivity {
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
         Collections.addAll(mTitle, title);
+
         initData();
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(mRecyclerViewAdapter = new ImgAdapter(this, mTitle, mArrayList));
+        mRecyclerView.setAdapter(mRecyclerViewAdapter = new ImgAdapter(this, mTitle, mArrayList,mImg));
 
     }
-
     private void initData() {
         mArrayList = new ArrayList<ArrayList<HashMap<String, Object>>>();
         HashMap<String, Object> hashMap = null;

@@ -18,15 +18,18 @@ import java.util.HashMap;
  */
 public class ImgAdapter extends RecyclerView.Adapter<ImgAdapter.MyViewHolder> {
     private ArrayList<String> mTitle = new ArrayList<>();
+    private ArrayList<ArrayList<String>>mImg;
+    private ArrayList<String>itemImg;
     private Context mContext;
     private ArrayList<ArrayList<HashMap<String, Object>>> mList;
 
 
-    public ImgAdapter(Context context, ArrayList<String> mTitle,ArrayList<ArrayList<HashMap<String, Object>>> mList) {
+    public ImgAdapter(Context context, ArrayList<String> mTitle, ArrayList<ArrayList<HashMap<String, Object>>> mList,ArrayList<ArrayList<String>>mImg) {
         super();
         this.mContext = context;
         this.mTitle = mTitle;
         this.mList = mList;
+        this.mImg =mImg;
     }
 
     @Override
@@ -41,7 +44,8 @@ public class ImgAdapter extends RecyclerView.Adapter<ImgAdapter.MyViewHolder> {
         holder.time.setText(mTitle.get(position));
         if (holder.gridView != null) {
             ArrayList<HashMap<String, Object>> arrayListForEveryGridView = mList.get(position);
-            ImgGridAdapter gridViewAdapter=new ImgGridAdapter(mContext, arrayListForEveryGridView);
+            //ArrayList<String>itemImg = mImg.get(position);            //获取图片资源
+            ImgGridAdapter gridViewAdapter=new ImgGridAdapter(mContext, arrayListForEveryGridView,itemImg);
             holder.gridView.setAdapter(gridViewAdapter);
         }
     }
