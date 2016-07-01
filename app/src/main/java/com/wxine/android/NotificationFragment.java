@@ -49,7 +49,7 @@ public class NotificationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.setCustomAnimations(R.anim.fragment_up,R.anim.fragment_slide_left_exit);
+                //transaction.setCustomAnimations(R.anim.fragment_up,R.anim.fragment_slide_left_exit);
            //     transaction.hide(NotifacationFragment.this).show(fragment).commit();
                 transaction.addToBackStack(null);
                 if (!fragment.isAdded() && frag) {

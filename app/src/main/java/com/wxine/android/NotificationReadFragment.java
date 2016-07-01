@@ -46,7 +46,7 @@ public class NotificationReadFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.setCustomAnimations(R.anim.fragment_down,R.anim.fragment_slide_left_exit);      //自定义动画
+                //transaction.setCustomAnimations(R.anim.fragment_down,R.anim.fragment_slide_left_exit);      //自定义动画
 
                //transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);                  //系统自带的动画
             //    transaction.hide(NotifacationReadFragment.this).show(fragment).commit();
