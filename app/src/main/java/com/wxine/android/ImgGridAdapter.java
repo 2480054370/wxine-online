@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.wxine_online.wxine_online.R;
+import com.nostra13.universalimageloader.core.assist.ImageSize;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,11 +23,13 @@ import java.util.HashMap;
 public class ImgGridAdapter extends BaseAdapter {
     private Context mContext;
     private ArrayList<HashMap<String, Object>> mList;
+    private ArrayList<String>mImg;
 
-    public ImgGridAdapter(Context mContext, ArrayList<HashMap<String, Object>> mList) {
+    public ImgGridAdapter(Context mContext, ArrayList<HashMap<String, Object>> mList,ArrayList<String>mImg) {
         super();
         this.mContext = mContext;
         this.mList = mList;
+        this.mImg = mImg;
     }
 
     @Override
@@ -34,7 +37,8 @@ public class ImgGridAdapter extends BaseAdapter {
         if (mList == null) {
             return 0;
         } else {
-            return this.mList.size();
+            return (int)Math.ceil(Math.random()*10);
+            //return mImg.size();
         }
     }
 
@@ -60,6 +64,8 @@ public class ImgGridAdapter extends BaseAdapter {
             convertView = LayoutInflater.from
                     (this.mContext).inflate(R.layout.img_img, null, false);
             holder.image = (ImageView) convertView.findViewById(R.id.iv_head);
+            ImageSize mImageSize = new ImageSize(100, 100);
+            com.nostra13.universalimageloader.core.ImageLoader.getInstance().displayImage("http://img2.imgtn.bdimg.com/it/u=3642030749,2966168779&fm=21&gp=0.jpg",holder.image);
             convertView.setTag(holder);
 
         } else {
