@@ -3,6 +3,7 @@ package com.wxine.android;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
@@ -28,21 +29,19 @@ public class MyApplication extends Application{
 
     private static final String TAG = MyApplication.class.getSimpleName();
     public static SharedPreferences preferences;
-    private static String sessionId = null;
+    public static String sessionId = "";
     private static User sessionUser = null;
     private static String account = null;
     private static String password = null;
-    public static boolean login = true;
+    public static boolean login ;
     private static boolean certed = false;
 
-    public static void saveUser(User sessionUser, String account, String password) {
+    public static void saveUser(String sessionUser, String account, String password, Boolean login) {
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("sessionId", sessionUser.getSessionid());
+        editor.putString("sessionId", sessionUser);
         editor.putString("account", account);
         editor.putString("password", password);
-        editor.putString("name", sessionUser.getName());
-        editor.putString("image", sessionUser.getImage());
-        editor.putString("sessionUser", sessionUser.getJson());
+        editor.putBoolean("login",login);
         editor.commit();
     }
 
@@ -57,6 +56,7 @@ public class MyApplication extends Application{
     }
 
     public static String getSessionId() {
+        sessionId = preferences.getString("sessionId","");
         return sessionId;
     }
 
@@ -83,6 +83,7 @@ public class MyApplication extends Application{
     }
 
     public static boolean isLogin() {
+        login = preferences.getBoolean("login", false);
         return login;
     }
 

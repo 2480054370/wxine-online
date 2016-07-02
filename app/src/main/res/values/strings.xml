@@ -15,7 +15,7 @@
     <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">手机或邮箱</string>
+    <string name="prompt_name">用户名</string>
     <string name="prompt_password">密码</string>
     <string name="confirm_password">确认密码</string>
     <string name="action_sign_in">登录</string>
@@ -111,8 +111,8 @@
     <string name="search_all">搜索</string>
     <string name="login_btn_text">登录</string>
     <string name="regist_btn_text">注册</string>
-    <string name="login_title">网信__登录</string>
-    <string name="regist_title">网信__注册</string>
+    <string name="login_title">网星__登录</string>
+    <string name="regist_title">网星__注册</string>
     <string name="login_tip_user">手机号/用户ID</string>
     <string name="login_tip_pwd">请输入登录密码</string>
     <string name="login_regist">没有账号 去注册</string>
