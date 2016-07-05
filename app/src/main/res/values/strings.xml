@@ -32,7 +32,8 @@
     </string>
     <string name="title_activity_info">信息</string>
     <string name="title_activity_settings">设置</string>
-    <string name="title_personaldata">个人资料</string>
+    <string name="title_personaldata">个人资料</string>.
+    <string name="title_management">账户管理</string>
 
     <!-- Strings related to Settings -->
 

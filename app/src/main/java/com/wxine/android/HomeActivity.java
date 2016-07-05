@@ -61,12 +61,7 @@ public class HomeActivity extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new HomeAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view) {
-                //Log.e("--------", "skajdksa");
-                //Intent Hintent = new Intent(getApplication(), HomeDetails.class);
-                //ImageView iview = (ImageView) view.findViewById(R.id.HomeBodyAgreeImg);
-                //String tag = iview.getTag().toString();
-                //Toast.makeText(getApplication(), "aaa" + iview.getTag(), Toast.LENGTH_SHORT).show();
-                //startActivity(Hintent);
+                
             }
 
             @Override

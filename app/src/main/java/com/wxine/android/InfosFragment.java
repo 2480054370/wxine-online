@@ -105,9 +105,9 @@ public class InfosFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.infos_fragment, container, false);
 
-        mRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.info_refresh_widget);
+        mRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.info_refresh_widget);
 
-        final RecyclerView mRecyclerView = (RecyclerView)view.findViewById(R.id.infos_recycler_view);
+        final RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.infos_recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(this.getContext());
@@ -117,53 +117,52 @@ public class InfosFragment extends Fragment {
         datainit();
 
 
-
         mAdapter = new InfosAdapter(this.getContext(), list);
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new InfosAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, Info data) {
-                Log.v("点击====", data.getTitle()+"here");
+                Log.v("点击====", data.getTitle() + "here");
                 Intent i = new Intent(getActivity(), InfoActivity.class);
                 ImageView iview = (ImageView) view.findViewById(R.id.iv_agree_img);
                 String tag = iview.getTag().toString();
-                Toast.makeText(getActivity(),"aaa"+iview.getTag(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "aaa" + iview.getTag(), Toast.LENGTH_SHORT).show();
                 Bundle mBundle = new Bundle();
                 mBundle.putSerializable("info", data);
-                i.putExtra("IsComment",false);
-                i.putExtra("tag",tag);
+                i.putExtra("IsComment", false);
+                i.putExtra("tag", tag);
                 i.putExtras(mBundle);
                 startActivity(i);
             }
 
-            public void onAgreeClick(ImageView view,int position){
-                Toast.makeText(getActivity(),"aaa"+position,Toast.LENGTH_SHORT).show();
-              //  view.setAlpha(0.0001f);
+            public void onAgreeClick(ImageView view, int position) {
+                Toast.makeText(getActivity(), "aaa" + position, Toast.LENGTH_SHORT).show();
+                //  view.setAlpha(0.0001f);
 //                ImageView v = (ImageView) view.findViewById(R.id.iv_agree_img);
 //                v.setImageResource(R.drawable.xreply);
-               // view.setImageResource(R.drawable.favorite);
-                if(view.getTag().toString().equals("no")){
+                // view.setImageResource(R.drawable.favorite);
+                if (view.getTag().toString().equals("no")) {
                     view.setImageResource(R.drawable.info_favorite);
                     view.setTag("yes");
-                }else {
+                } else {
                     view.setImageResource(R.drawable.info_xfavorite);
                     view.setTag("no");
                 }
             }
 
-            public  void onShareClick(View view,int position){
+            public void onShareClick(View view, int position) {
                 showPopwindow();
             }
 
-            public void onCommentClick(View view,Info data){
+            public void onCommentClick(View view, Info data) {
                 Intent i = new Intent(getActivity(), InfoActivity.class);
                 ImageView iview = (ImageView) view.findViewById(R.id.iv_agree_img);
                 String tag = iview.getTag().toString();
                 Bundle mBundle = new Bundle();
                 mBundle.putSerializable("info", data);
-                i.putExtra("tag",tag);
+                i.putExtra("tag", tag);
                 i.putExtras(mBundle);
-                i.putExtra("IsComment",true);
+                i.putExtra("IsComment", true);
                 startActivity(i);
             }
 
@@ -218,7 +217,7 @@ public class InfosFragment extends Fragment {
                     info3.setContent("this is content3 There are moments in life when you miss someone so much that you just want to pick them from your dreams and hug them for real! Dream what you want to dream;go where you want to go;be what you want to be,because you have only one life and one chance to do all the things you want to do.");
                     info3.setComments(set2);
                     info3.setCleancontent("this is c content");
-                    mAdapter.addItem(info3,0);
+                    mAdapter.addItem(info3, 0);
                     mRefreshLayout.setRefreshing(false);
                     mRecyclerView.scrollToPosition(0);
                 }
@@ -230,12 +229,13 @@ public class InfosFragment extends Fragment {
             public void onBottom() {
                 super.onBottom();
                 // 到底部自动加载
-                if (!isLoading){
+                if (!isLoading) {
                     Log.d("", "loading old data");
                     new LoadDataTask("load").execute();
                     isLoading = true;
                 }
             }
+
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
@@ -253,10 +253,10 @@ public class InfosFragment extends Fragment {
      */
     public void showPopwindow() {
         // 利用layoutInflater获得View
-     //   LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-     //   View view = inflater.inflate(R.layout.popwindowlayout, null);
+        //   LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //   View view = inflater.inflate(R.layout.popwindowlayout, null);
         LayoutInflater inflater = LayoutInflater.from(this.getContext());
-        View view= inflater.inflate(R.layout.info_popwindowlayout,null);
+        View view = inflater.inflate(R.layout.info_popwindowlayout, null);
 
         // 下面是两种方法得到宽度和高度 getWindow().getDecorView().getWidth()
 
@@ -266,7 +266,6 @@ public class InfosFragment extends Fragment {
 
         // 设置popWindow弹出窗体可点击，这句话必须添加，并且是true
         window.setFocusable(true);
-
 
 
         // 实例化一个ColorDrawable颜色为半透明
@@ -283,7 +282,7 @@ public class InfosFragment extends Fragment {
         window.showAtLocation(getActivity().findViewById(R.id.iv_share_img),
                 Gravity.BOTTOM, 0, 0);
 
-        RelativeLayout OtherShare  = (RelativeLayout) view.findViewById(R.id.OtherShareLayout);
+        RelativeLayout OtherShare = (RelativeLayout) view.findViewById(R.id.OtherShareLayout);
         OtherShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -321,7 +320,7 @@ public class InfosFragment extends Fragment {
         });
     }
 
-    public void datainit(){
+    public void datainit() {
         // user
         User user = new User();
         user.setName("abc");
@@ -412,7 +411,7 @@ public class InfosFragment extends Fragment {
         info2.setCleancontent("this is c content");
         list.add(info);
         list.add(info2);
-        Log.d("InfosFragment", "Socket Type: " + info.getCleancontent()+"111");
+        Log.d("InfosFragment", "Socket Type: " + info.getCleancontent() + "111");
     }
 
     public String NetType(Context context) {
@@ -464,9 +463,8 @@ public class InfosFragment extends Fragment {
             restTemplate.getMessageConverters().add(c);
 
 
-
             //restTemplate.getMessageConverters()
-      //      pagesupport = restTemplate.getForObject("http://10.0.2.2:8080/wxine_m/home.htm?page={page}", InfoPage.class, page+1);
+            //      pagesupport = restTemplate.getForObject("http://10.0.2.2:8080/wxine_m/home.htm?page={page}", InfoPage.class, page+1);
 
             /*JSONObject jsonObject = null;
             JSONObject ops;
@@ -516,7 +514,7 @@ public class InfosFragment extends Fragment {
             }*/
             //Log.v("===========", resultData);
 
-          //  return pagesupport;
+            //  return pagesupport;
 
             return pagesupport;
         }

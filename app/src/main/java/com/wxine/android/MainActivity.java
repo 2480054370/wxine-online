@@ -401,7 +401,11 @@ public class MainActivity extends AppCompatActivity
                 };
                 timer.schedule(task, 300 * 1);
                 viewIsAtHome = true;
+                break;
 
+            case R.id.nav_admin:
+                startActivity(new Intent(MainActivity.this, ManagementActivity.class));
+                Log.e("------","1");
                 break;
 
             case R.id.nav_profile:
