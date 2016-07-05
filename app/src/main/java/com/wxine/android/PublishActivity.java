@@ -244,7 +244,7 @@ public class PublishActivity extends Activity {
             initData2(picturePath);
             //显示在Gallery视图
 //            initData(BitmapFactory.decodeFile(picturePath));
-            initView();
+            initView2();
         }
 
         //相机
@@ -319,12 +319,42 @@ public class PublishActivity extends Activity {
 
 
     private void initView() {
+        for (int i = 0; i < mImgIds.length; i++) {
+            final View view = mInflater.inflate(R.layout.publish_album_item,
+                    mGallery, false);
+            final ImageView img = (ImageView) view.findViewById(R.id.pub_photos);
+            img.setImageBitmap(mImgIds[i]);
+            mGallery.addView(view);
+
+            //删除照片
+            ImageView remove = (ImageView) view.findViewById(R.id.remove_img);
+            remove.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mGallery.removeView(view);
+                    if(mGallery.findViewById(R.id.pub_photos) == null && TextUtils.isEmpty(editText.getText())){
+                        pub_send.setImageResource(R.drawable.pub_ic_send);
+                        sendTF = false;
+                    }
+                }
+            });
+        }
+
+        if (!TextUtils.isEmpty(editText.getText()) || mGallery.findViewById(R.id.pub_photos) != null) {
+            pub_send.setImageResource(R.drawable.pub_ic_issend);
+            sendTF = true;
+        } else {
+            pub_send.setImageResource(R.drawable.pub_ic_send);
+            sendTF = false;
+        }
+    }
+    private void initView2() {
         Log.e("tag:len","a "+mImgIds2.length);
         for (int i = 0; i < mImgIds2.length; i++) {
             final View view = mInflater.inflate(R.layout.publish_album_item,
                     mGallery, false);
             final ImageView img = (ImageView) view.findViewById(R.id.pub_photos);
-          //  img.setImageBitmap(mImgIds[i]);
+            //  img.setImageBitmap(mImgIds[i]);
             mImgIds2[i] = "file:///"+mImgIds2[i];
             imageLoader.displayImage(mImgIds2[i], img);
             mGallery.addView(view);

@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.wxine_online.wxine_online.R;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
  * Created by zz on 2016/6/21.
@@ -29,11 +32,13 @@ public class PersonalSecondTab extends Fragment {
     private View view;
     private LayoutInflater mInflater;
     private LinearLayout mGallery;
-    private Bitmap[] mImgIds;
+    private String[] mImgIds;
+    private ImageLoader imageLoader;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mInflater = LayoutInflater.from(getContext());
+        imageLoader = ImageLoader.getInstance(); // Get singleton instance
         view = inflater.inflate(R.layout.personal_second_tab, container, false);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         SecondUpdata = (Button) view.findViewById(R.id.SecondUpdata);
@@ -71,34 +76,7 @@ public class PersonalSecondTab extends Fragment {
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
 
-            //解码图像大小,对图片进行缩放...防止图片过大导致内存溢出...
-            BitmapFactory.Options o = new BitmapFactory.Options();//实例化一个对象...
-
-            o.inJustDecodeBounds = true;//这个就是Options的第一个属性,设置为true的时候，不会完全的对图片进行解码操作,不会为其分配内存，只是获取图片的基本信息...
-
-            BitmapFactory.decodeFile(picturePath, o);
-
-            /*
-             * 下面也就是对图片进行的一个压缩的操作...如果图片过大，最后会根据指定的数值进行缩放...
-             * 找到正确的刻度值，它应该是2的幂.
-             * 这里我指定了图片的长度和宽度为70个像素...
-             *
-             * */
-
-            final int REQUIRED_SIZE = 70;
-            int width_tmp = o.outWidth, height_tmp = o.outHeight;
-            int scale = 1;
-            while (true) {
-                if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE)
-                    break;
-                width_tmp /= 2;
-                height_tmp /= 2;
-                scale *= 2;
-            }
-
-            BitmapFactory.Options o2 = new BitmapFactory.Options(); //这里定义了一个新的对象...获取的还是同一张图片...
-            o2.inSampleSize = scale;   //对这张图片设置一个缩放值...inJustDecodeBounds不需要进行设置...
-            initData(BitmapFactory.decodeFile(picturePath, o2));
+            initData(picturePath);
             initView();
 
             /*//压缩，用于节省BITMAP内存空间--解决BUG的关键步骤
@@ -115,8 +93,8 @@ public class PersonalSecondTab extends Fragment {
     }
 
     //照片的显示
-    private void initData(Bitmap per_photos) {
-        mImgIds = new Bitmap[]{per_photos};
+    private void initData(String pub_photos) {
+        mImgIds = new String[]{pub_photos};
     }
 
     private void initView() {
@@ -125,7 +103,8 @@ public class PersonalSecondTab extends Fragment {
             final View personalphoto_item = mInflater.inflate(R.layout.personalphoto_item,
                     mGallery, false);
             final ImageView img = (ImageView) personalphoto_item.findViewById(R.id.per_photos);
-            img.setImageBitmap(mImgIds[i]);
+            mImgIds[i] = "file:///"+mImgIds[i];
+            imageLoader.displayImage(mImgIds[i], img);
             mGallery.addView(personalphoto_item);
             //删除照片
             ImageView remove = (ImageView) personalphoto_item.findViewById(R.id.remove_perimg);
