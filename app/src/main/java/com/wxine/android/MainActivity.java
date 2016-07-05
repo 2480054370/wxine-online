@@ -2,6 +2,7 @@ package com.wxine.android;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -26,10 +27,23 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wxine_online.wxine_online.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.wxine.android.auth.LoginActivity;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -124,18 +138,18 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        View nav_header = LayoutInflater.from(this).inflate(R.layout.nav_header_main, null);
-        ImageView user_logo = (ImageView) nav_header.findViewById(R.id.iv_user_logo);
-        TextView user_name = (TextView) nav_header.findViewById(R.id.tv_user_name);
-        TextView user_sign = (TextView) nav_header.findViewById(R.id.tv_user_sign);
+        //View nav_header = LayoutInflater.from(this).inflate(R.layout.nav_header_main, null);
+        //ImageView user_logo = (ImageView) findViewById(R.id.iv_user_logo);
+        TextView user_name = (TextView) findViewById(R.id.nav_username);
+        TextView user_sign = (TextView) findViewById(R.id.nav_usersign);
 
         im = (ImageView) findViewById(R.id.iv_user_logo);
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, HomeActivity.class);
-                startActivity(intent);
+                        Intent intent = new Intent();
+                        intent.setClass(MainActivity.this, HomeActivity.class);
+                        startActivity(intent);
             }
         });
         final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -163,10 +177,10 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        imageLoader.displayImage(app.getSessionUser().getImage(), user_logo);
-        user_name.setText(app.getSessionUser().getName());
-        user_sign.setText(app.getSessionUser().getIntro());
-
+        //imageLoader.displayImage(app.getSessionUser().getImage(), user_logo);
+        //user_name.setText(getIntent().getStringExtra("name"));
+        //user_sign.setText(app.getSessionUser().getIntro());
+        user_name.setText(app.getAccount());
 
     }
 
@@ -336,8 +350,8 @@ public class MainActivity extends AppCompatActivity
                 task = new TimerTask() {
                     @Override
                     public void run() {
-                        //Intent InLocation = new Intent(MainActivity.this, LocationActivity.class);
-                        //startActivity(InLocation);
+                        Intent InLocation = new Intent(MainActivity.this, LocationActivity.class);
+                        startActivity(InLocation);
                     }
                 };
                 timer.schedule(task, 300 * 1);
@@ -352,8 +366,8 @@ public class MainActivity extends AppCompatActivity
                 task = new TimerTask() {
                     @Override
                     public void run() {
-                        //Intent InFriends = new Intent(MainActivity.this, FriendsActivity.class);
-                        //startActivity(InFriends);
+                        Intent InFriends = new Intent(MainActivity.this, FriendsActivity.class);
+                        startActivity(InFriends);
                     }
                 };
                 timer.schedule(task, 300 * 1);
@@ -361,15 +375,15 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_photos:
                 fab.hide();
-                //startActivity(new Intent(MainActivity.this, FriendsActivity.class));
+                //startActivity(new Intent(MainActivity.this, ImgActivity.class));
                 //页面从右进，从左退出
                 //overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
 
                 task = new TimerTask() {
                     @Override
                     public void run() {
-                        //final Intent InPhotos = new Intent(MainActivity.this, ImgActivity.class);
-                        //startActivity(InPhotos);
+                        final Intent InPhotos = new Intent(MainActivity.this, ImgActivity.class);
+                        startActivity(InPhotos);
                     }
                 };
                 timer.schedule(task, 300 * 1);
@@ -381,8 +395,8 @@ public class MainActivity extends AppCompatActivity
                 task = new TimerTask() {
                     @Override
                     public void run() {
-                        //Intent InEvent = new Intent(MainActivity.this, EventActivity.class);
-                        //startActivity(InEvent);
+                        Intent InEvent = new Intent(MainActivity.this, EventActivity.class);
+                        startActivity(InEvent);
                     }
                 };
                 timer.schedule(task, 300 * 1);
@@ -516,17 +530,22 @@ public class MainActivity extends AppCompatActivity
         displayView(0);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK) {
-                //Bundle b = data.getExtras();
-                //app.sessionId = b.getString("sessionid");
-                Log.v("login:", "登录成功" + app.getSessionId());
-                displayView(0);
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == 1) {
+//            if (resultCode == RESULT_OK) {
+//                //Bundle b = data.getExtras();
+//                //app.sessionId = b.getString("sessionid");
+//                Log.d("login:", "登录成功" + data.getStringExtra("sessionid"));
+//                app.login = true;
+//                displayView(0);
+//            }else{
+//                Intent i = new Intent(MainActivity.this, LoginActivity.class);
+//                startActivity(i);
+//                app.login = false;
+//            }
+//        }
+//    }
 
 }

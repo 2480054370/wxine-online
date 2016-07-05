@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainCoordLayoutStatus"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    app:statusBarBackground="@color/subpage">
+
+    <LinearLayout
+        android:id="@+id/attendance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F8F8F8"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/qd_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#0F9D58"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <ImageView
+            android:id="@+id/PersonalBgImage"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_weight="1"
+            android:background="@drawable/b4" />
+
+        <com.wxine.android.utils.CircleImageView
+            android:id="@+id/icon"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-50dp"
+            android:fitsSystemWindows="true"
+            android:src="@drawable/face" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+
+            <TableRow
+                android:id="@+id/Sing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:background="#FFFFFF"
+                android:paddingBottom="16.0dip"
+                android:paddingTop="16.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left"
+                    android:paddingLeft="20dp"
+                    android:src="@drawable/qdedit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="10dp"
+                    android:text="手工签到"
+                    android:textColor="#292727"
+                    android:textSize="16.0sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="300dp"
+                    android:src="@drawable/ic_arrow" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/saoma"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:paddingBottom="16.0dip"
+                android:paddingTop="16.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left"
+                    android:paddingLeft="20dp"
+                    android:src="@drawable/scancode" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="10dp"
+                    android:text="扫码签到"
+                    android:textColor="#292727"
+                    android:textSize="16.0sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="300dp"
+                    android:src="@drawable/ic_arrow" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:paddingBottom="16.0dip"
+                android:paddingTop="16.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left"
+                    android:paddingLeft="20dp"
+                    android:src="@drawable/takephoto" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="10dp"
+                    android:text="拍照签到"
+                    android:textColor="#292727"
+                    android:textSize="16.0sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="300dp"
+                    android:src="@drawable/ic_arrow" />
+
+            </TableRow>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
+
+

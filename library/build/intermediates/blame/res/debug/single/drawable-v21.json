@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\mdtp_material_button_selected.xml",
+        "source": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\src\\main\\res\\drawable-v21\\mdtp_material_button_selected.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\mdtp_material_button_background.xml",
+        "source": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\src\\main\\res\\drawable-v21\\mdtp_material_button_background.xml"
+    }
+]

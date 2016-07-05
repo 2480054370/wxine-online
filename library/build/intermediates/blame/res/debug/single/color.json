@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\build\\intermediates\\res\\merged\\debug\\color\\mdtp_date_picker_selector.xml",
+        "source": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\src\\main\\res\\color\\mdtp_date_picker_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\build\\intermediates\\res\\merged\\debug\\color\\mdtp_done_text_color_dark.xml",
+        "source": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\src\\main\\res\\color\\mdtp_done_text_color_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\build\\intermediates\\res\\merged\\debug\\color\\mdtp_done_text_color.xml",
+        "source": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\src\\main\\res\\color\\mdtp_done_text_color.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\build\\intermediates\\res\\merged\\debug\\color\\mdtp_date_picker_year_selector.xml",
+        "source": "D:\\AndroidStudio\\AndroidStudioProjects\\wxine-online\\library\\src\\main\\res\\color\\mdtp_date_picker_year_selector.xml"
+    }
+]

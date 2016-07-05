@@ -5,22 +5,21 @@
     <RelativeLayout
         android:id="@+id/notification_read"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="50dp"
         android:background="@color/notification_bg"
-        android:layout_weight="0.8"
         >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="30px"
+            android:layout_margin="15dp"
             android:textColor="@color/notification_title"
             android:text="已读通知"
             />
         <ImageView
-            android:layout_width="60px"
-            android:layout_height="60px"
-            android:layout_margin="30px"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
             android:layout_alignParentRight="true"
             android:src="@drawable/notification_time"
             />

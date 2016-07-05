@@ -21,11 +21,11 @@
     <application
         android:name="com.wxine.android.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.wxine.android.MainActivity">
+        <activity android:name="com.wxine.android.InitialActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,11 +34,24 @@
         </activity>
 
         <activity
+            android:name="com.wxine.android.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name="com.wxine.android.CommDetailActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name="com.wxine.android.CommThirdAddActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.FriendsActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.LocationActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.ImgActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name="com.wxine.android.CourseFirstPage"
@@ -78,6 +91,48 @@
         <activity
             android:name="com.wxine.android.PublishActivity"
             android:theme="@style/MyDialog"></activity>
+        <activity
+            android:name="com.wxine.android.EventActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.EventCreate"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.EventSign"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.EventSpage"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.EventCheck"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.EventContent"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.EventEvaluate"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.EventSignShow"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.EventLeave"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.MipcaActivityCapture"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.SingActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.auth.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.wxine.android.auth.RegisterActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>
